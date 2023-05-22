@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversalApp1.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#4B4A4D</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="#6D6B71"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+
+        <Thickness x:Key="PageMargin">20</Thickness>
+        <!-- Colors -->
+        <Color x:Key="AppPrimaryColor">#4B4A4D</Color>
+        <Color x:Key="AppBackgroundColor">#262627</Color>
+        <Color x:Key="PrimaryColor">Silver</Color>
+        <Color x:Key="SecondaryColor">Silver</Color>
+        <Color x:Key="TertiaryColor">#6D6B71</Color>
+
+
+        <!-- Implicit styles -->
+        <Style TargetType="ContentPage"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize"
+                    Value="Medium" />
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppPrimaryColor}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource SecondaryColor}" />
+            <Setter Property="CornerRadius"
+                    Value="5" />
+        </Style>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+          
+             x:Class="UniversalApp1.Views.RoutineEntryPage">
+    <ContentPage.Content>
+
+        <StackLayout Margin="20">
+
+            <Frame BorderColor="{StaticResource TertiaryColor}" BackgroundColor="{StaticResource AppBackgroundColor}" >
+            <Editor Placeholder="Enter your routine"
+                Text="{Binding RoutineText}"
+                HeightRequest="100" 
+                    TextColor="{StaticResource PrimaryColor}"
+                    PlaceholderColor="{StaticResource PrimaryColor}"/>
+            </Frame>
+
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="From:"  TextColor="{StaticResource PrimaryColor}"/>
+                <Label Text="To:" Grid.Column="1"  TextColor="{StaticResource PrimaryColor}"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*">
+                <TimePicker x:Name="FromTime" Time="{Binding From}" TextColor="{StaticResource PrimaryColor}"/>
+                <TimePicker Grid.Column="1" Time="{Binding To}" TextColor="{StaticResource PrimaryColor}"/>
+            </Grid>
+
+            <!-- Layout children in two columns -->
+            <Grid ColumnDefinitions="*,*">
+                <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
